@@ -1,0 +1,17 @@
+{%extends "layout.html"%}
+{% block title %}
+    Heart Disease predictor
+{% endblock %}
+{% block main %}
+<!-- Displays the main page  -->
+<!-- The page displays the data on how many people suffer from heart disease. -->
+<div class="jumbotron">
+  <h1 class="display-4">Welcome!</h1>
+  <p class="lead"> The number of people diagnosed with heart disease is increasing year after year. Based on 2016 data, on average, someone dies of a heart attack every 3.70 minutes.</p>
+  <p class="lead"> The main reason for such high number of diagnosis is the lack of knowledge about the risk of having a heart disease. So we have developed this website inorder to allow you to recognize your likelyhood of developing a heart disease. </p>
+  <p class="lead">This tool is designed to assist patients who have NOT been diagnosed with heart disease in understanding their risk for developing heart disease. If you have been diagnosed with heart disease, please talk to your doctor about your level of risk for having a coronary event or complication.</p>
+  <a href="http://127.0.0.1:5000/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login to see your chance</a>
+  <hr class="my-4">
+  <p>This is not meant to be an accurate representation of your risk of having a heart disease. </p>
+</div>
+{% endblock %}

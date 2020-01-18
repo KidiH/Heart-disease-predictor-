@@ -1,0 +1,161 @@
+{%extends "layout.html"%}
+{% block title %}
+    Heart Disease predictor
+{% endblock %}
+{% block main %}
+<!-- Creates a form for the user to input their specific values-->
+<!-- On most fields, there exists a minimum and maximum value to be enter -->
+<!-- In other cases there is a drop down list that allows the user to choose from different options -->
+<!-- As for the entry based fields, there exists a suplimentary button that informs the user of what the expected input is -->
+<!-- Futher, a check box option is available for user to mark if they don't know what their result is -->
+    
+    <form action="/more" method="POST" style="align: left !important">
+<!-- Age Field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="age" placeholder="age" type="number" required/>
+        </div>
+
+<!-- Sex list -->
+        <div class="form-group">
+            <select name="sex" class="form-control">
+                <option hidden="" value="">Sex</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+        </div>
+
+<!-- Weight Field -->
+        <div class="form-group">
+            <input class="form-control" name="weight" placeholder="Weight" type="number" step="0.1" required/>
+        </div>
+
+<!-- Chest pain list -->
+        <div class="form-group">
+        <select name="chest" class="form-control">
+            <option hidden="" value="">Chest Pain</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymptomatic/I don't know</option>	
+        </select>
+        </div>
+
+<!-- Resting blood sugar Field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="rbp" placeholder="Resting blood Pressure" title="let's see" type="number" min="70" max="250" style="width:180px !important">
+	    <button type="button" class="btn btn-outline-info" style="width:20px !important" title="The pressure as your heart relaxes.">?</button>
+	    <br>
+	    <input class="form-check-input" type="checkbox" value="140" id="defaultCheck1" name="checkrbp">
+	    <label class="form-check-label" for="defaultCheck1">
+	        I don't know
+	    </label>
+        </div>
+
+<!-- Cholestrol Field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="chol" placeholder="Cholestrol" title="let's see" type="number" min="50" max="500" style="width:180px !important">
+            <button type="button" class="btn btn-outline-info" style="width:20px !important" title="The cholesterol level in your blood.">?</button>
+	    <br>
+	    <input class="form-check-input" type="checkbox" value="200" id="defaultCheck1" name="checkchol">
+	    <label class="form-check-label" for="defaultCheck1">
+	        I don't know
+	    </label>
+        </div>
+
+<!-- Fasting blood sugar list -->  
+
+	<div class="form-group">
+            <select name="fbs" class="form-control">
+                <option hidden="" value="">Do you have Elevated blood sugar?</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+		<option value="0">I don't know</option>
+            </select>
+        </div>
+
+
+<!-- Resting Electrocardiographic result list -->
+        <div class="form-group">
+            <select name="rer" class="form-control">
+                <option hidden="" value="">Resting Electrocardiographic Results</option>
+                <option value="0">Normal</option>
+                <option value="1">Having ST-T</option>
+                <option value="2">Hypertrophy</option>
+		<option value="0">I don't know</option>
+            </select>
+        </div>
+
+<!-- Max heart rate Field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="mhr" placeholder="Maximum Heart Rate Achieved" title="let's see" type="number" style="width:180px !important">
+            <button type="button" class="btn btn-outline-info" style="width:20px !important" title="The maximum number of beats made by your heart in 1 minute of effort.
+Subtract your age from 220: Maximum heart rate = 220 - age">?</button>
+	    <br>
+	    <input class="form-check-input" type="checkbox" value="80" id="defaultCheck1" name="checkmhr">
+	    <label class="form-check-label" for="defaultCheck1">
+	        I don't know
+	    </label>
+        </div>
+
+<!-- Induced Angina List -->
+        <div class="form-group">
+            <select name="eia" class="form-control">
+                <option hidden="" value="">Do you have Exercise Induced Angina?</option>
+                <option value="1"> Yes </option>
+                <option value="0"> No </option>
+		<option value="0"> I don't know </option>
+            </select>
+        </div>
+
+<!-- ST depression Field -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="st" placeholder="ST depression results" title="let's see" type="number" min="0" max="6" step="0.1" style="width:180px !important">
+            <button type="button" class="btn btn-outline-info" style="width:20px !important" title="Reading on an electrocardiogram, wherein the trace in the ST segment is abnormally low below the baseline.">?</button>
+	    <br>
+	    <input class="form-check-input" type="checkbox" value="140" id="defaultCheck1" name="checkst">
+	    <label class="form-check-label" for="defaultCheck1">
+	        I don't know
+	    </label>
+        </div>
+
+<!-- Slope list -->
+        <div class="form-group">
+            <select required name="slope" class="form-control">
+                <option hidden="" value="">Slope of the peak exercise ST segment</option>
+                <option value="0">0 - Unsloping</option>
+                <option value="1">1 - Flat</option>
+                <option value="2">2 - Downsloping</option>
+		<option value="0">I don't know</option>
+				
+            </select>
+        </div>
+
+<!-- Vessel List -->
+        <div class="form-group">
+            <select name="vessel" class="form-control">
+                <option hidden="" value="">Number of Major Vessels colored by flouroscopy</option>
+                <option value="0">Zero</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+		<option value="0">I don't know</option>
+            </select>
+        </div>
+
+<!-- Thal List -->
+        <div class="form-group">
+            <select name="thal" class="form-control">
+                <option hidden="" value="">Thal</option>
+                <option value="0">Zero </option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+		<option value="0">I don't know</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Predict</button>
+    </form>
+    <br><a href="/change">See more</a>
+{% endblock %}

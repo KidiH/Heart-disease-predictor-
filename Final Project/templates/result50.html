@@ -1,0 +1,22 @@
+{%extends "layout.html"%}
+{% block title %}
+    Heart Disease predictor
+{% endblock %}
+{% block main %}
+<!-- Displays result if equal to or more than 50% -->
+    <h1> Result ... </h1>
+
+<!-- Red Alert banner with result -->
+    <div class="alert alert-danger" role="alert">
+    	Your probability of having a heart disease is <b>{{Y}}% </b>
+    </div>
+    <p> That looks pretty concerning. Consider looking over the following! </p>
+
+<!-- Links to book a doctor appointment and exercise recommendations -->
+    <a href="https://www.challiance.org/cha-services/primary-care?utm_source=reachlocal&utm_medium=sem&utm_campaign=chaprimarycare&scid=3267025&cid=2926300&tc=EAIaIQobChMIl47Mi-Ch5gIVEYrICh0WDQ9ZEBAYASAAEgJgyPD_BwE&rl_key=ffcf4293a3758537a47d7a0879362542&kw=923708:3035&pub_cr_id=391860320378&dynamic_proxy=0&primary_serv=www.challiance.org&device=c&network=g&targetid=kwd-12986999471&loc_physical_ms=9002000&rl_track_landing_pages=1"> Book an appointment with a doctor now </a>
+    </br>
+    <a href="https://medlineplus.gov/ency/patientinstructions/000094.htm"> Exercise Tips</a>
+    <div class="alert alert-secondary" role="alert">
+    	The results are not meant to be an accurate representation of your likelyhood of getting a heart disease. 
+    </div>
+{% endblock %}
